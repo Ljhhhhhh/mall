@@ -13,13 +13,12 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @Configuration
 @EnableSwagger2
 public class SwaggerConfig {
-
   @Bean
   public Docket api() {
     return new Docket(DocumentationType.SWAGGER_2)
       .apiInfo(apiInfo())
       .select()
-      .apis(RequestHandlerSelectors.basePackage("pi.mall.controller"))
+      .apis(RequestHandlerSelectors.basePackage("pi.mall.api"))
       .paths(PathSelectors.any())
       .build();
   }
@@ -27,7 +26,7 @@ public class SwaggerConfig {
   private ApiInfo apiInfo() {
     return new ApiInfoBuilder()
       .title("swagger-api文档")
-      .description("swagger文档 by 13")
+      .description("swagger文档 by pipilu")
       .version("1.0")
       .build();
   }
